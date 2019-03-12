@@ -1,0 +1,117 @@
+#pragma once
+#include <sstream>
+#include <string>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <iostream>
+#include <utility>
+#include <set>
+#include <cctype>
+#include <queue>
+#include <stack>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <deque>
+#include <limits>
+#include <iomanip>
+using namespace std;
+typedef long long ll;
+typedef pair<int, int> pii;
+
+const ll INF = 1000000007;
+ll gcd(ll a, ll b) {
+	if (b == 0) return a;
+	return gcd(b, a % b);
+}
+int pr[100010];
+void uini(int n) {
+	for (size_t i = 0; i <= n; i++)
+	{
+		pr[i] = i;
+	}
+}
+
+int parent(int x) {
+	if (x == pr[x]) return x;
+	return pr[x] = parent(pr[x]);
+}
+
+bool unit(int x, int y) {
+	int px = parent(x);
+	int py = parent(y);
+
+	if (px == py) return false;
+	if (px < py) {
+		pr[py] = px;
+	}
+	else {
+		pr[px] = py;
+	}
+	return true;
+}
+ll ar[40];
+bool use[40];
+int memo[1001][1001];
+int revm[1001];
+int rev(int x) {
+	
+
+	int &res = revm[x];
+	if (~res) return res;
+	res = 0;
+	while (x > 0)
+	{
+		res *= 10;
+		res += x % 10;
+		x /= 10;
+	}
+	return res;
+}
+int rec(int n,int m) {
+
+	int &res = memo[n][m];
+	if (~res) return res;
+	if (n == 0 || m == 0) return 0;
+	memo[n][m] = 1;
+	int nex = n;
+	int ney = m;
+	if (nex < ney) {
+		nex = rev(nex);
+	}
+	else ney = rev(ney);
+
+	if (nex < ney) {
+		ney -= nex;
+	}
+	else nex -= ney;
+	return res = rec(nex,ney);
+}
+void solv() {
+	ll n, m;
+	cin >> n >> m;
+	memset(memo, -1, sizeof(memo));
+	memset(revm, -1, sizeof(revm));
+
+	int count = 0;
+	for (size_t i = 1; i <= n; i++)
+	{
+		for (size_t j = 1; j <= m; j++)
+		{
+			if (rec(i, j) == 1) {
+				count++;
+			}
+		}
+	}
+	cout << count << endl;
+}
+
+
+
+
+int main() {
+	solv();
+
+	return 0;
+}
