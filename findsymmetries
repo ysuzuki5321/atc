@@ -1,4 +1,5 @@
-#pragma once
+#include <stdio.h>
+#include <string.h>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -55,7 +56,7 @@ ll ar[40];
 int memo[1001][1001];
 int revm[1001];
 int rev(int x) {
-	
+
 
 	int &res = revm[x];
 	if (~res) return res;
@@ -68,7 +69,7 @@ int rev(int x) {
 	}
 	return res;
 }
-int rec(int n,int m) {
+int rec(int n, int m) {
 
 	int &res = memo[n][m];
 	if (~res) return res;
@@ -85,7 +86,7 @@ int rec(int n,int m) {
 		ney -= nex;
 	}
 	else nex -= ney;
-	return res = rec(nex,ney);
+	return res = rec(nex, ney);
 }
 int ok[301][301];
 bool use[301][301];
@@ -110,25 +111,26 @@ void solv() {
 	{
 		for (size_t j = 0; j < n; j++)
 		{
-			for (size_t k = 1; k < n; k++)
+			for (size_t k = 1; k + i < n; k++)
 			{
-				int nx = ((i + n) - k) % n;
-				int ny = ((j + n) + k) % n;
-				//if (use[nx][ny]) break;
+				int nx = i + k;
+				int ny = ((j + n) - k) % n;
 				if (tb[i][j] != tb[nx][ny]) {
-					
+
 					for (size_t t = 0; t < n; t++)
 					{
 						int ndy = (k + t) % n;
 						int dx = ((t + n) - i) % n;
 						int dy = ((ndy + n) - j) % n;
+						if (dx == 0 && dy == 1) {
+							cout << endl;
+						}
 						if (!ok[dx][dy]) break;
 						ok[dx][dy] = false;
 						res--;
 					}
 				}
 			}
-			//use[i][j] = true;
 		}
 	}
 
