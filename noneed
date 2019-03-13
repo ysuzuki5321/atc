@@ -33,7 +33,7 @@ void COMinit() {
 	inv[1] = 1;
 	for (int i = 2; i < MAX; i++) {
 		fac[i] = fac[i - 1] * i % MOD;
-		inv[i] = MOD - inv[MOD%i] * (MOD / i) % MOD;
+		inv[i] = MOD - inv[MOD % i] * (MOD / i) % MOD;
 		finv[i] = finv[i - 1] * inv[i] % MOD;
 	}
 }
@@ -73,13 +73,17 @@ int revm[1001];
 
 bool ok[5010];
 bool use[301][301];
+map<ll, int> m;
+map<ll, int> pri;
 void solv() {
-	ll n,k;
+	ll n, k;
 	cin >> n >> k;
 	ll a[5010];
 	for (size_t i = 0; i < n; i++)
 	{
 		cin >> a[i];
+		m[a[i]]++;
+		pri[a[i]] = 0;
 	}
 	sort(a, a + n);
 	ll sum = 0;
@@ -89,22 +93,24 @@ void solv() {
 	{
 		sum += a[i];
 		if (sum >= k) {
-			for (; ni < i; ni++)
+			for (; ni <= i; ni++)
 			{
 				sum -= a[ni];
 				if (sum < k) {
 					ok[ni] = true;
+					pri[a[ni]]++;
 				}
 			}
 		}
 	}
-	ll res = 0;
-	for (size_t i = 0; i < n; i++)
-	{
-		res += !ok[i];
-		if (ok[i]) break;
-	}
 
+	ll res = 0;
+	for (auto v : pri) {
+		if (v.second == 0) {
+			res += m[v.first];
+		}
+		else break;
+	}
 	cout << res << endl;
 }
 
