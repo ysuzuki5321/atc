@@ -1,0 +1,124 @@
+#include <stdio.h>
+#include <string.h>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <iostream>
+#include <utility>
+#include <set>
+#include <cctype>
+#include <queue>
+#include <stack>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <deque>
+#include <limits>
+#include <iomanip>
+using namespace std;
+typedef long long ll;
+typedef pair<int, int> pii;
+
+const ll INF = 1000000007;
+
+const int MAX = 210000;
+const int MOD = 1000000007;
+
+long long fac[MAX], finv[MAX], inv[MAX];
+void COMinit() {
+	fac[0] = fac[1] = 1;
+	finv[0] = finv[1] = 1;
+	inv[1] = 1;
+	for (int i = 2; i < MAX; i++) {
+		fac[i] = fac[i - 1] * i % MOD;
+		inv[i] = MOD - inv[MOD%i] * (MOD / i) % MOD;
+		finv[i] = finv[i - 1] * inv[i] % MOD;
+	}
+}
+ll gcd(ll a, ll b) {
+	if (b == 0) return a;
+	return gcd(b, a % b);
+}
+int pr[100010];
+void uini(int n) {
+	for (size_t i = 0; i <= n; i++)
+	{
+		pr[i] = i;
+	}
+}
+
+int parent(int x) {
+	if (x == pr[x]) return x;
+	return pr[x] = parent(pr[x]);
+}
+
+bool unit(int x, int y) {
+	int px = parent(x);
+	int py = parent(y);
+
+	if (px == py) return false;
+	if (px < py) {
+		pr[py] = px;
+	}
+	else {
+		pr[px] = py;
+	}
+	return true;
+}
+ll ar[40];
+int memo[1001][1001];
+int revm[1001];
+
+bool ok[5010];
+bool use[41][41];
+string ta[45];
+int r, c;
+int dx[] = { -1,0,1,0 };
+int dy[] = { 0,-1,0,1 };
+pair<ll,ll> count(int x, int y,int nex) {
+
+	if (use[x][y]) return pair<ll, ll>(0, 0);
+	if (ta[x][y] == '*') return pair<ll,ll>(0,0);
+	use[x][y] = true;
+	pair<ll,ll> res = pair<ll,ll>(1,(nex == 1));
+	for (int i = 0; i < 4; i++)
+	{
+		int tx = x + dx[i];
+		int ty = y + dy[i];
+		if (tx < 0 || tx >= r || ty < 0 || ty >= c) continue;
+		pair<ll,ll> cc = count(tx, ty, nex * -1);
+		res.first += cc.first;
+		res.second += cc.second;
+	}
+	return res;
+}
+void solv() {
+	cin >> r >> c;
+	for (size_t i = 0; i < r; i++)
+	{
+		cin >> ta[i];
+	}
+	ll res = 0;
+	for (size_t i = 0; i < r; i++)
+	{
+		for (size_t j = 0; j < c; j++)
+		{
+			auto f = count(i, j, 1);
+			res += max(f.second,f.first - f.second);
+		}
+	}
+	cout << res << endl;
+}
+
+
+
+
+int main() {
+	//COMinit();
+	solv();
+
+	return 0;
+}
+	
