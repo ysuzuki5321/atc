@@ -74,11 +74,12 @@ struct edge {
 	edge(int _to, ll _cost) : to(_to), cost(_cost) {}
 };
 ll d[200010];
+ll dex[200010];
 vector<edge> es[200010];
 int maxv = 100000;
 int n, m,s,t;
 void dija(int st) {
-	cout << "start:" << st << endl;
+	//cout << "start:" << st << endl;
 	priority_queue<pair<ll, ll>,vector<pair<ll, ll>>,greater<pair<ll, ll>>> q;
 	q.push(pair<ll, ll>(d[st], st));
 
@@ -102,6 +103,31 @@ void dija(int st) {
 		}
 	}
 }
+void dija2(int st) {
+	//cout << "start:" << st << endl;
+	priority_queue<pair<ll, ll>, vector<pair<ll, ll>>, greater<pair<ll, ll>>> q;
+	q.push(pair<ll, ll>(dex[st], st));
+
+	while (!q.empty())
+	{
+		pair<ll, ll> p = q.top();
+		q.pop();
+		ll v = p.second;
+		if (p.first > dex[v]) continue;
+		for (auto item : es[v]) {
+			ll cos = dex[v] + item.cost;
+			if (dex[item.to] > cos) {
+				//cout << "from:" << v << " to:" << item.to;
+				//cout << " d[v]:" << d[v];
+				//cout << " itemcost:" << item.cost;
+				//cout << " cost:" << cos << endl;
+
+				dex[item.to] = cos;
+				q.push(pair<ll, ll>(cos, item.to));
+			}
+		}
+	}
+}
 ll res[100010];
 void solv() {
 	cin >> n >> m >> s >> t;
@@ -120,18 +146,22 @@ void solv() {
 
 	for (size_t i = 1; i < n; i++)
 	{
-		es[i].push_back(edge(i + maxv, maxval));
 	}
 	fill(d, d + 200010, maxval);
-	es[n].push_back(edge(n + maxv, 0));
+	fill(dex, dex + 200010, maxval);
+	//es[n].push_back(edge(n + maxv, 0));
 	d[s] = 0;
 	dija(s);
-	res[n] = inim - d[maxv + t];
+	dex[t + maxv] = 0;
+	dija2(t + maxv);
+	res[n] = inim - (d[n] + dex[maxv + n]);
+
 	for (ll i = n - 1; i > 0; i--)
 	{
-		es[i][es[i].size() - 1].cost = 0;
-		dija(i);
-		res[i] = inim - d[maxv + t];
+		//es[i].push_back(edge(i + maxv, 0));
+		//es[i][es[i].size() - 1].cost = 0;
+
+		res[i] = max(res[i + 1], inim - (d[i] + dex[i + maxv]));
 	}
 	for (size_t i = 1; i <= n; i++)
 	{
