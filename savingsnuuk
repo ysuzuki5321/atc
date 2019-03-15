@@ -1,0 +1,148 @@
+#include <stdio.h>
+#include <string.h>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <iostream>
+#include <utility>
+#include <set>
+#include <cctype>
+#include <queue>
+#include <stack>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <deque>
+#include <limits>
+#include <iomanip>
+#include <bitset>
+using namespace std;
+typedef long long ll;
+typedef pair<int, int> pii;
+
+const ll INF = 1000000007;
+
+const int MAX = 210000;
+const int MOD = 1000000007;
+
+long long fac[MAX], finv[MAX], inv[MAX];
+void COMinit() {
+	fac[0] = fac[1] = 1;
+	finv[0] = finv[1] = 1;
+	inv[1] = 1;
+	for (int i = 2; i < MAX; i++) {
+		fac[i] = fac[i - 1] * i % MOD;
+		inv[i] = MOD - inv[MOD%i] * (MOD / i) % MOD;
+		finv[i] = finv[i - 1] * inv[i] % MOD;
+	}
+}
+ll gcd(ll a, ll b) {
+	if (b == 0) return a;
+	return gcd(b, a % b);
+}
+int pr[100010];
+void uini(int n) {
+	for (size_t i = 0; i <= n; i++)
+	{
+		pr[i] = i;
+	}
+}
+
+int parent(int x) {
+	if (x == pr[x]) return x;
+	return pr[x] = parent(pr[x]);
+}
+
+bool unit(int x, int y) {
+	int px = parent(x);
+	int py = parent(y);
+
+	if (px == py) return false;
+	if (px < py) {
+		pr[py] = px;
+	}
+	else {
+		pr[px] = py;
+	}
+	return true;
+}
+struct edge {
+	int to;
+	ll cost;
+	edge(int _to, ll _cost) : to(_to), cost(_cost) {}
+};
+ll d[200010];
+vector<edge> es[200010];
+int maxv = 100000;
+int n, m,s,t;
+void dija(int st) {
+	cout << "start:" << st << endl;
+	priority_queue<pair<ll, ll>,vector<pair<ll, ll>>,greater<pair<ll, ll>>> q;
+	q.push(pair<ll, ll>(d[st], st));
+
+	while (!q.empty())
+	{
+		pair<ll, ll> p = q.top();
+		q.pop();
+		ll v = p.second;
+		if (p.first > d[v]) continue;
+		for (auto item : es[v]) {
+			ll cos = d[v] + item.cost;
+			if (d[item.to] > cos) {
+				//cout << "from:" << v << " to:" << item.to;
+				//cout << " d[v]:" << d[v];
+				//cout << " itemcost:" << item.cost;
+				//cout << " cost:" << cos << endl;
+
+				d[item.to] = cos;
+				q.push(pair<ll, ll>(cos, item.to));
+			}
+		}
+	}
+}
+ll res[100010];
+void solv() {
+	cin >> n >> m >> s >> t;
+	maxv = n;
+	const ll inim = 1000000000000000;
+	const ll maxval = inim + 100LL;
+	for (size_t i = 0; i < m; i++)
+	{
+		ll a, b, c, d;
+		cin >> a >> b >> c >> d;
+		es[a].push_back(edge(b, c));
+		es[b].push_back(edge(a, c));
+		es[a + maxv].push_back(edge(b + maxv, d));
+		es[b + maxv].push_back(edge(a + maxv, d));
+	}
+
+	for (size_t i = 1; i < n; i++)
+	{
+		es[i].push_back(edge(i + maxv, maxval));
+	}
+	fill(d, d + 200010, maxval);
+	es[n].push_back(edge(n + maxv, 0));
+	d[s] = 0;
+	dija(s);
+	res[n] = inim - d[maxv + t];
+	for (ll i = n - 1; i > 0; i--)
+	{
+		es[i][es[i].size() - 1].cost = 0;
+		dija(i);
+		res[i] = inim - d[maxv + t];
+	}
+	for (size_t i = 1; i <= n; i++)
+	{
+		cout << res[i] << endl;
+	}
+}
+
+int main() {
+	//COMinit();
+	solv();
+
+	return 0;
+}
+	
