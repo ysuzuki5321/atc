@@ -1,1 +1,7 @@
+状態遷移を見る
+→範囲がどのようになるか →https://atcoder.jp/contests/abc147/tasks/abc147_eでは次第に範囲が広くなるが全ての状態が保持可能でチェック可能→DPで対応出来る
+
+場合の数
+→シーケンシャルな処理で一つ一つのステップが独立している、遷移出来る前の状態分を掛け算する→ https://atcoder.jp/contests/sumitrust2019/tasks/sumitb2019_e
+
 
