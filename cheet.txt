@@ -33,3 +33,9 @@
 最終的な状態
   1.ある状態になっているのが正しいか正しくないかを判定する時にその一手前の状態を見る
     →https://atcoder.jp/contests/arc012/tasks/arc012_3
+
+倍数
+  1.合成数は素因数まで分解して考える
+    →そうでないと本質を間違い問題が解けない
+      →https://atcoder.jp/contests/abc148/tasks/abc148_e
+    
