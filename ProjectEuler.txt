@@ -59,3 +59,15 @@ Summation of primes
 Largest product in a grid
   →20*20のグリッドの中で隣接した4つの数字の積の中で一番大きいのは何か
     →普通にやる
+
+Number letter counts
+  →１から5までのwordを書き出すと、one,two,three,four,fiveで3+3+5+4+4=19 letters userd in total
+    →１～1000までのwordの合計は何か？
+      →100=handred 
+      →one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,t
+ 
+Maximum path sum I
+  →数字がピラミッド型に積まれていて、一番上から一番下まで移動しながら通過した場所の数字を足していく
+    →移動できるのは左下か右下だけ
+      →総和の最大を求めよ
+        →再帰でやる
