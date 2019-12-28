@@ -659,4 +659,16 @@ arc071_c TrBBnsformBBtion
     →出来る操作は
       →1.A→BB,B→AA
       →2.AAAかBBBであるような部分文字列を選び、消す
-  →Tに対して1の操作をするか
+  →サンプルから考える
+    →ABAをBBBAに出来るか
+      →1文字目をBBに変換すればよい
+    →ABAをBBBBに出来るか
+      →出来ないABA→BB BA→BBB BB→BBBB AA→BBBB BB A→BBBBBB BB→BBBBB 
+        →ループする
+          →AかBにすべてを変換を変換してしまうと考えると、シンプルになりそう
+      →A→BB→AAB→AAAA
+        →同じ文字は3つずつ増やせる
+      →A→BB→AAB→BBBBB
+        →別の文字にする場合は2から3つずつ増やせる
+    →ABAをBBBBB
+    
