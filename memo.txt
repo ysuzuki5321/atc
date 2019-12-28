@@ -671,4 +671,6 @@ arc071_c TrBBnsformBBtion
       →A→BB→AAB→BBBBB
         →別の文字にする場合は2から3つずつ増やせる
     →ABAをBBBBB
+    →AABとBAA→BAA
+    →2,1,2と1,2,2
     
