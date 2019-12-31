@@ -89,3 +89,15 @@ Amicable numbers
         
 Names scores
   →
+  
+Non-abundant sums
+  →完全数nはn以外のnを割り切れる数を足したときに同じ数字になるものをいう
+    →abundant number nは割り切れる数を足したときにnより大きくなる数字
+  
+1000-digit Fibonacci number
+  →フィボナッチ数で1000桁ある数字のうち一番最初に出現する値
+    →黄金比を使用するとのこと
+      →https://www.xarg.org/puzzle/project-euler/problem-25/
+      
+  
+  
