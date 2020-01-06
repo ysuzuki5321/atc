@@ -1,2 +1,3 @@
 たまにやり直したい問題集
   https://atcoder.jp/contests/arc034/tasks/arc034_3 素因数分解と約数の合計のプラクティス
+  https://atcoder.jp/contests/m-solutions2019/tasks/m_solutions2019_c 確率と期待値のプラクティス
