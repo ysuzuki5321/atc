@@ -169,8 +169,12 @@ Pandigital products
                 →10000*10000までやってクリアできた、 処理をキャンセルしていたため、さほど重くはならなかった
                 
 Digit cancelling fractions
-  →49/98の9をキャンセルすると4/8となる
-    →
+  →n=numerator,d=denominator,c=cancel
+  →49/98=1/2=4/8
+    →10n+c/10c+d=n/d
+  →30/50=3/5
+    →10n+c/10d+c=n/d
+  
           
                
          
