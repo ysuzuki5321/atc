@@ -17,4 +17,27 @@
   →文字列Tの中に文字列Pが出現するかどうか判定
     →これは接尾辞配列
       →suffixarrayをO(n)で構築して検索する
+        →suffixarrayのサイズがでかくなりすぎてMLE
+          →ライブラリ作る必要があるレベルなので後回し
+
+お釣りの最小個数　https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/15/ALDS1_15_A 
+  →1,5,10,25を使ってnを作る
+    →やるだけ
+    
+有理ナップサック問題　https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/15/ALDS1_15_B
+  →重さがwまでの範囲で自由である
+    →その時の価値はvi*w'/wiとなる
+  →1<=N<=10^5
+  →1<=w<=10^9
+  →1<=vi<=10^9
+  →1<=wi<=10^9
+    →これは単位当たりの価値が一番大きいものを詰められるだけ詰めていけば良さそう
+      
+活動選択問題　https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/15/ALDS1_15_C
+  →多くの活動に参加したい
+  →活動の一つはsiに始まりtiに終わる
+    →スケジューリング問題
+      →終わる時間が速いものから拾う
         
+
+
