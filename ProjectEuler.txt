@@ -200,4 +200,14 @@ Truncatable primes
   →このような素数11個の和を求めよ
     →素数テーブルを作る
       →下からやってく
-    
+
+Pandigital　multiples
+  →https://projecteuler.net/problem=38
+  →192*1=192 192*2=384 192*3=576
+    →product is pandigital
+      →1 to 9 pandigital 9-digit number 
+        →一番大きいパンデジタル数になる時の(1,2,...,n)のnは何か
+          →987654321と並んでいる時なので1で達成できることは確定している
+            →しかし制約が1>nなので見つけろということである
+              →とりあえずごりおしで
+          
