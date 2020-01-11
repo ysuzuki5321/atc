@@ -3,4 +3,4 @@
   https://atcoder.jp/contests/m-solutions2019/tasks/m_solutions2019_c 確率と期待値のプラクティス
   https://atcoder.jp/contests/arc076/tasks/arc076_c 範囲を考える
   https://yukicoder.me/problems/no/727 数え上げ
-  
+  https://atcoder.jp/contests/abc150/tasks/abc150_d 最小公倍数の計算
