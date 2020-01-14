@@ -219,3 +219,24 @@ Integer right triangles
       →２辺を決めてもう1辺が整数であることを求めればよさそうではあるが
         →小数点誤差を含めると計算がやや厄介
           →a^2+b^2=c^2となるためint*int=c^2を見つければいいか
+
+Champernowne's constant
+  →https://projecteuler.net/problem=40
+  →チャンパーノウン定数のd1*d10*d100*d1000*d10000*d100000*d1000000を求める
+    →上の数達は全て1<=dn<=1000000の間に現れるため、単純にループ可能
+      
+Pandigital prime
+  →https://projecteuler.net/problem=41
+  →what is the largest n-digit pandigital prime that exists?
+    →最大は9桁
+      →素数なので末尾が2,4,5,6,8は除かれる
+        →単純に9!で考えた場合でも全探索可能
+        →素数判定に10^5くらいかかりそうだったが行けた
+        
+Coded triangle numbers
+  →https://projecteuler.net/problem=42
+  →triangle numbers is given by,tn=1/2n(n+1)
+    →英単語のそれぞれのアルファベットの番号を足した数字がtriangle numberであればtriangle wordを呼ぶ
+    →テキストの中にいくつのtriangle wordがあるか？
+      →ごり
+
