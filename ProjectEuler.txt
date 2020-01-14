@@ -240,3 +240,8 @@ Coded triangle numbers
     →テキストの中にいくつのtriangle wordがあるか？
       →ごり
 
+Sub-string divisibility
+  →https://projecteuler.net/problem=43
+  →1406357289 0to9 pandigital number
+    →先頭を除いた3桁ずつを考えた時に2からの素数でそれぞれ割り切れる数の総和を求める
+
