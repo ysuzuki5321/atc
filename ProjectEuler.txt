@@ -245,3 +245,25 @@ Sub-string divisibility
   →1406357289 0to9 pandigital number
     →先頭を除いた連続する3桁ずつを考えた時に2からの素数でそれぞれ割り切れる数の総和を求める
 
+
+Pentagon numbers
+  →https://projecteuler.net/problem=44
+  →pn=n(3n-1)/2
+    →pk+pj=pn and pk-pj=pu
+    →のようになるkとjのうちD=|pk-pj|が小さいものは何か
+      →となり合っているものでもk,jが大きくなればそれより小さい範囲でさらに小さいものが見つかる可能性はある
+        →どのような数字の増え方をするのかを見る
+          →n=1000で2000000いかない程度である
+          →n=1000では足りなかったので3000にして二分探索を使用
+            
+Triangular, pentagonal, and hexagonal
+  →https://projecteuler.net/problem=45
+  →Triangle ,pentagonal,hexagonal
+    →t285=p165=h143=40755 
+      →40755 is common
+    →find the next common number 
+    →とりあえず3000まで埋めてみよう
+      →1000000までやってとりあえず見つけた
+
+
+      
