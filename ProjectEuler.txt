@@ -265,5 +265,14 @@ Triangular, pentagonal, and hexagonal
     →とりあえず3000まで埋めてみよう
       →1000000までやってとりあえず見つけた
 
+Goldbach's other conjecture
+  →https://projecteuler.net/problem=46
+  →奇数の合成数は素数と2倍した2乗の数で現わせる事を提案した
+    →反例がある
+      →最小の反例は何か
+    →とりあえず5000000くらいまで篩にかけてみる
+      →10000までやれば十分だった
+
+
 
       
