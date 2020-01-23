@@ -463,4 +463,19 @@ Cyclical figurate numbers
       →どの数字から開始しても良いのでtriangleから開始する
         →
   
-    
+Cubic permutations
+  →https://projecteuler.net/problem=62
+  →41063625=345^3、56623104=384^3、66430125=405^3
+    →41063625を並び替えて3つのcube(3乗)が出来る
+      →上は3つだが5つのcubeで使われている数字が共通している数のうち一番小さいものは何か？
+        →a<b<c<d<e
+      →64bit整数では処理出来ないと思われる
+        →doubleも大きい数字になると精度が悪くなる
+      →多倍長整数で処理するのが正解っぽいが
+        →C#で処理
+
+Odd period square roots
+  →https://projecteuler.net/problem=64
+  →
+  
+  
