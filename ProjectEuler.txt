@@ -619,5 +619,6 @@ Right triangles with integer coordinates
         決まっていない場合がある
           幾何ライブラリ使用
       
-  
-  
+Arithmetic expressions  
+  https://projecteuler.net/problem=93
+    
