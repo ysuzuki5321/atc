@@ -831,7 +831,32 @@ Large repunit factors
           3のところである気がしてきた
             かなりレベルが高い問題であるため、あきらめ
 
+Powers of Two
+  https://projecteuler.net/problem=686
+  2^7=128
+    上2桁は12、次に上2桁が12になる2の累乗は80
+      これをp(12,1)=7,p(12,2)=80と表わす
+        p(123,34)=12710
+        ではp(123,678910)は？
+          明らかに普通に計算は出来ない
+            logを使用出来そうな気もする
+              12710log2=12710
+                出来なさそう
+          上5桁程度見ながら2倍して上げれば良いような気もする
 
+Using up to one million tiles how many different "hollow" square laminae can be formed?
+  https://projecteuler.net/problem=173
+  100個までのタイルを使用し、正方形中に正方形の穴が空いている形は41個作れる
+  1000000個までのタイルではどうか？
+    穴のサイズを決める、それを囲うタイルを計算すれば穴のサイズ毎に求められる
+
+Non-bouncy numbers
+  https://projecteuler.net/problem=113
+  上の桁から下の桁に向かって各桁が増加する数字、もしくは減少する数字が10^100未満でいくつ存在するか？
+    これはdp
+      全て同じ数字になるのだけをうまく排除出来れば良い
+        というかn+dCdであった、増加も減少も格子の最短距離問題に帰着可能であるため
+        
 
 
 
