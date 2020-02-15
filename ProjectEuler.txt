@@ -910,6 +910,40 @@ How many reversible numbers are there below one-billion?
                               しかし全部で20000000パターンもないため計算可能である
                                 解けるレベルの問題ではなかったようだ
                                 
+Ordered radicals
+  https://projecteuler.net/problem=124
+  504=2^3*3^2*7,rad(504)=2*3*7=42
+    ある数字nのrad(n)はnの素因数の和
+      方針：とりあえずunsortですべて出してsortする
+
+Pandigital Fibonacci ends
+  https://projecteuler.net/problem=104
+  フィボナッチ数Fkにおいて、最初の9桁と最後の9桁がpandigitalになるkを求めよ
+    最後だけであれば簡単、10桁で割った余りをもっておけばいいだけである
+      先頭がめんどくさい
+        先頭20桁程度残して処理してみるか？
+          
+Prime cube partnership
+  https://projecteuler.net/problem=131
+  p=19,8^3+8^2*19=12^3 is perfect cube 
+    100未満ではこのようなpが4つ存在している、1000000未満ではいくつ存在するか？
+  n^3+n^2*p=v^3
+    n^3+n^3=2(n^3)!=v^3
+      3乗と3乗の和は3乗にならず2の倍数になる
+  n^2(n+p)=v^3
+    8^2(8+19)=8^2(27)=12^3
+      (2*2*2)^2*3^3=2^6*3^3
+    3乗になるには(p+n)が3乗になっている必要がある
+      6^6(2+6)
+      2^2*3^2(2^3)
+    nの素因数が3乗で表せる
+      (2*3*4)^2(3^3)=15552
+
+
+
+
+
+
 
 
 
