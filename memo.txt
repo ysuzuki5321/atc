@@ -1608,6 +1608,13 @@ D - 11
 F - Many Many Paths
   https://atcoder.jp/contests/abc154/tasks/abc154_f
   
+D - Equals
+  https://atcoder.jp/contests/abc097/tasks/arc097_b
+  UnionFindを使う問題であるが、どうやったか覚えていないので解きなおし
+    自分の番号の所に自分が入れるかどうかを考えるわけであるが
+    基本的には同じグループ内であればどこにでも動ける
+      自分のグループと自分の番号の場所にいる番号のグループが同じであれば良いのだ
+        以上
 
 
   
