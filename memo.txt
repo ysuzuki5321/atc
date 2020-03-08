@@ -1616,5 +1616,111 @@ D - Equals
       自分のグループと自分の番号の場所にいる番号のグループが同じであれば良いのだ
         以上
 
-
+C - Switches
+  https://atcoder.jp/contests/abc128/tasks/abc128_c
+  n個のスイッチとm個の電球がある
+    それぞれに番号が振られている
+      電球iはki個のスイッチにつながっている、スイッチsi1,si2,...,sikiのうちonになっているスイッチの個数を2で割った余りがpiに等しい時に店頭する
+        全ての電球が転倒するようなスイッチのon/off状態の組み合わせは何通りあるか？
+    スイッチは高々10個であるため、全探索
+      1<<10
+        チェックは10*10=
+      1<<10*100で100000程度
   
+C - HonestOrUnkind2
+  https://atcoder.jp/contests/abc147/tasks/abc147_c
+  n人の人がいる
+    正直者か不親切な人
+      yij=1の時、人xijは正直者である
+      yij=0の時、人xijは不親切な人である
+    n人の中には最大で何人の正直者が存在し得るか？
+      ある人iが正直者であると仮定する
+        iが正直者である場合
+        ほかの正直者から正直者であると言われている
+          このチェックを行えば良い
+
+B - RGB Boxes
+  https://atcoder.jp/contests/diverta2019/tasks/diverta2019_b
+  
+D - Lucky PIN
+  https://atcoder.jp/contests/sumitrust2019/tasks/sumitb2019_d
+  bool ex[10][10][10]
+    1<i<n-1について考えれば良い
+
+A - 勇者ビ太郎 (Bitaro the Brave)
+  https://atcoder.jp/contests/joi2019ho/tasks/joi2019ho_a
+  h*w
+  (i,j)=J,(i,l)=O,(k,j)=Iの(i,j,k,l)の個数が魔法の威力
+  1<=h<=3000
+  1<=w<=3000
+    i,jが共通している 
+      縦横で情報を集めておけば掛け算出来る
+        横のO,縦のIの個数
+          i<k,j<lなので
+            (i,j)よりも右側、下側にある個数を掛ける
+
+D - 新入生歓迎数列 2
+  https://atcoder.jp/contests/tkppc4-2/tasks/tkppc4_2_d
+  長さnの数列Aをプレゼントすることにした。
+  人気の整数が２つあり、これがpとqであるという情報を入手した
+  次の条件を全て満たす整数(x,y,z)の組がどれだけあるかを数えようとした
+    Aは与えられる
+      (Ax+Ay+Az)=pかつ(Ax-Ay-Az)=q
+    真ん中を固定する？
+  1<=n<=10^5
+  -10^9<=P,Q<=10^9
+  -10^9<=Ai<=10^9
+    種類を考えるにしろ10^9なのでmapを使う必要が出てくる
+      二つの数の組み合わせを作るのも難しい
+        p-(Ax+Az)=p-Ax-Az=Ay
+        q-(Ax-Az)=q-Ax+Az=Ay
+      (p+q)-2Ax=2Ay
+      (p+q)/2-Ax=Ay
+      p-Ay-Az=Ax
+      q-(-Ay-Az)=Ax
+      (p+q)/2=Ax
+        となり、Axは一意に定まる
+          するとAy,Azも一意に定まる
+      p-(Ax+Ay)=p-Ax-Ay=Az
+      q-(Ax-Ay)=q-Ax+Ay=-Az
+      p+q-2Ax=0
+        こうするとAy,Azは0になってしまう
+        Ayを考えた時
+          Az=p-Ax-Ay
+          -Az=p-Ax+Ay の数が分かれば良い
+        mapで間に合うだろうか？
+
+D - Factorization
+  https://atcoder.jp/contests/abc110/tasks/abc110_d
+  Mになる倍数の組み合わせを、長さnの数列で表現する
+    最初にMを素因数分解する
+      それぞれの倍数の数cをn個の箱に分配するのである
+        つまり重複組み合わせ
+          柵の数はn-1
+            c+n-1Ccで後は掛け合わせる
+
+B - 難易度
+  https://atcoder.jp/contests/arc043/tasks/arc043_b
+  n個の問題から4つ選ぶ
+    この時
+      i問目はi-1問目の2倍以上の難易度である必要がある
+    累積出来そうな気がする
+    昇順にソートしているという前提で
+      あるiを選べる場合はi+1も選ぶ事が可能
+        それらは独立に２倍以上の数を選べる
+          なのでiにi+1の組み合わせを足しても重複はしないため、累積可能
+      ある数以上の組み合わせ数に関してはこれで求められる
+        そしてこれは3つの組み合わせまでであればO(n)で求められるということを示す
+          ここから4つの組み合わせをどうするか考える
+            dpで深さを指定していく、深さは最大4
+
+D - Blue and Red Balls
+  https://atcoder.jp/contests/abc132/tasks/abc132_d
+  高橋君がi回操作する必要があるボールの並べ方は何通りあるか？
+    i回操作するということは青のi箇所に仕切りを入れるということ
+      k-1Ci-1
+    赤色のボールの数のパターン数だけ掛け算する
+      パターン数は赤色のボールの並びに仕切りを入れる数
+        red+1Ci
+
+
