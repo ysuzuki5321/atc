@@ -17,6 +17,7 @@
   https://yukicoder.me/problems/no/247 dp
   https://yukicoder.me/problems/no/251 整数
   https://yukicoder.me/problems/no/145 貪欲 実装が重くなってしまう、整理出来ないか？
-   幾何
+  https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_1_A 幾何
+  
 
 
