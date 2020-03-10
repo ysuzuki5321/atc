@@ -5,7 +5,18 @@
   https://yukicoder.me/problems/no/727 数え上げ
   https://atcoder.jp/contests/abc150/tasks/abc150_d 最小公倍数の計算
 
-週間課題
+週間課題(ノータイムで実装までたどり着けるようになったら入れ替える)
+月曜日
+  https://yukicoder.me/problems/no/75
+  https://yukicoder.me/problems/no/241
+  https://yukicoder.me/problems/no/238
+  https://yukicoder.me/problems/no/233
 
 火曜日
   https://atcoder.jp/contests/m-solutions2019/tasks/m_solutions2019_c 確率と期待値のプラクティス  
+  https://yukicoder.me/problems/no/247 dp
+  https://yukicoder.me/problems/no/251 整数
+  https://yukicoder.me/problems/no/145 貪欲 実装が重くなってしまう、整理出来ないか？
+   幾何
+
+
