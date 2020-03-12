@@ -25,7 +25,13 @@
   https://yukicoder.me/problems/no/220 桁dp
   https://yukicoder.me/problems/no/225 レーベンシュタイン距離(忘れやすいため)
   https://yukicoder.me/problems/no/165　
+  https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_2_A 幾何
 
-
-
-
+木曜日
+  https://atcoder.jp/contests/arc036/tasks/arc036_c 難易度の高いdp 
+  https://atcoder.jp/contests/abc148/tasks/abc148_e 解けなかった素因数分解系の問題
+  https://yukicoder.me/problems/no/17 ワーシャルフロイド
+  https://yukicoder.me/problems/no/242 期待値の問題
+  https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_1_B 幾何
+  
+　
