@@ -1132,7 +1132,7 @@ public:
 	}
 
 };
-
+class Segment;
 class Point {
 public:
 	double x, y;
@@ -1153,16 +1153,50 @@ public:
 	bool operator == (const Point& p) const {
 		return fabs(x - p.x) < EPS && fabs(y - p.y) < EPS;
 	}
-		static double dot(Point a, Point b) {
+	static double dot(Point a, Point b) {
 		return a.x * b.x + a.y * b.y;
 	}
+	static double cross(Point a, Point b) {
+		return a.x * b.y - a.y * b.x;
+	}
+	static bool isOrthogonal(Point a, Point b) {
+		return EQ(dot(a, b), 0.0);
+	}
+	static bool isOrthogonal(Point a1, Point a2, Point b1, Point b2) {
+		return isOrthogonal(a1 - a2, b1 - b2);
+	}
+	static bool isOrthogonal(Segment s1, Segment s2);
+
+	static bool isPalallel(Point a, Point b) {
+		return EQ(cross(a, b), 0.0);
+	}
+	static bool isPalallel(Point a1, Point a2, Point b1, Point b2) {
+		return isPalallel(a1 - a2, b1 - b2);
+	}
+	static bool isPalallel(Segment s1, Segment s2);
+
+	static Point project(Segment s, Point p);
+
+	static Point reflect(Segment s, Point p);
 };
 
-struct Segment {
+class Segment {
+public:
 	Point p1, p2;
+	Segment(Point p1, Point p2) :p1(p1), p2(p2) {}
 };
-Point project(Segment s, Point p) {
+
+bool Point::isOrthogonal(Segment s1, Segment s2) {
+	return EQ(dot(s1.p2 - s1.p1, s2.p2 - s2.p1), 0.0);
+}
+bool Point::isPalallel(Segment s1, Segment s2) {
+	return EQ(cross(s1.p2 - s1.p1, s2.p2 - s2.p1), 0.0);
+}
+Point Point::project(Segment s, Point p) {
 	Point base = s.p2 - s.p1;
 	double r = Point::dot(p - s.p1, base) / base.norm();
 	return s.p1 + base * r;
+}
+Point Point::reflect(Segment s, Point p) {
+	return (project(s, p) * 2) - p;
 }
