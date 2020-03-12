@@ -34,4 +34,6 @@
   https://yukicoder.me/problems/no/242 期待値の問題
   https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_1_B 幾何
   
-　
+金曜日
+  https://atcoder.jp/contests/sumitrust2019/tasks/sumitb2019_e 数え上げ
+  
