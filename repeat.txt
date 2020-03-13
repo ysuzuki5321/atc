@@ -36,4 +36,9 @@
   
 金曜日
   https://atcoder.jp/contests/sumitrust2019/tasks/sumitb2019_e 数え上げ
+  https://atcoder.jp/contests/abc154/tasks/abc154_f 数え上げ
+  https://atcoder.jp/contests/agc037/tasks/agc037_c 貪欲？
+  https://atcoder.jp/contests/jsc2019-qual/tasks/jsc2019_qual_c 数え上げ
   
+
+
