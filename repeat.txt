@@ -45,6 +45,7 @@
   https://atcoder.jp/contests/agc026/tasks/agc026_c 半分全列挙
   https://atcoder.jp/contests/dp/tasks/dp_i 確率dp
   https://atcoder.jp/contests/agc026/tasks/agc026_b 整数問題
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D&lang=jp 
+
+日曜日
   
-
-

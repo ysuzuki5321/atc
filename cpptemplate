@@ -1175,9 +1175,39 @@ public:
 	}
 	static bool isPalallel(Segment s1, Segment s2);
 
+	static const int COUNTER_CLOCKWISE = 1;
+	static const int CLOCKWISE = -1;
+	static const int ONLINE_BACK = 2;
+	static const int ONLINE_FRONT = -2;
+	static const int ON_SEGMENT = 0;
+	static int ccw(Point p0, Point p1, Point p2) {
+		Point a = p1 - p0;
+		Point b = p2 - p0;
+		if (cross(a, b) > EPS) return COUNTER_CLOCKWISE;
+		if (cross(a, b) < -EPS) return CLOCKWISE;
+		if (dot(a, b) < -EPS) return ONLINE_BACK;
+		if (a.norm() < b.norm()) return ONLINE_FRONT;
+		return ON_SEGMENT;
+	}
+
+	static bool intersect(Point p1, Point p2, Point p3, Point p4) {
+		return (ccw(p1, p2, p3) * ccw(p1, p2, p4) <= 0
+			&& ccw(p3, p4, p1) * ccw(p3, p4, p2) <= 0);
+	} 
+	static bool intersect(Segment s1, Segment s2);
 	static Point project(Segment s, Point p);
 
 	static Point reflect(Segment s, Point p);
+
+	static Point getDistance(Point a, Point b) {
+		return (a - b).abs();
+	}
+
+	static double getDistanceLP(Segment s, Point p);
+
+	static double getDistanceSP(Segment s, Point p);
+	
+	static double getDistance(Segment s1, Segment s2);
 };
 
 class Segment {
@@ -1192,6 +1222,9 @@ bool Point::isOrthogonal(Segment s1, Segment s2) {
 bool Point::isPalallel(Segment s1, Segment s2) {
 	return EQ(cross(s1.p2 - s1.p1, s2.p2 - s2.p1), 0.0);
 }
+bool Point::intersect(Segment s1, Segment s2) {
+	return intersect(s1.p1,s1.p2,s2.p1,s2.p2);
+}
 Point Point::project(Segment s, Point p) {
 	Point base = s.p2 - s.p1;
 	double r = Point::dot(p - s.p1, base) / base.norm();
@@ -1199,4 +1232,17 @@ Point Point::project(Segment s, Point p) {
 }
 Point Point::reflect(Segment s, Point p) {
 	return (project(s, p) * 2) - p;
+}
+double Point::getDistanceLP(Segment s, Point p) {
+	return std::abs(cross(s.p2 - s.p1,p-s.p1) / (s.p2 - s.p1).abs());
+}
+double Point::getDistanceSP(Segment s, Point p) {
+	if (dot(s.p2 - s.p1, p - s.p1) < 0.0) return (p - s.p1).abs();
+	if (dot(s.p1 - s.p2, p - s.p2) < 0.0) return (p - s.p2).abs();
+	return getDistanceLP(s,p);
+}
+double Point::getDistance(Segment s1, Segment s2) {
+	if (intersect(s1, s2)) return 0.0;
+	return min({ getDistanceSP(s1,s2.p1),getDistanceSP(s1,s2.p2)
+		,getDistanceSP(s2,s1.p1),getDistanceSP(s2,s1.p2) });
 }
