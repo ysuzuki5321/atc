@@ -7,10 +7,10 @@
 
 週間課題(ノータイムで実装までたどり着けるようになったら入れ替える)
 月曜日
-  https://yukicoder.me/problems/no/75
-  https://yukicoder.me/problems/no/241
-  https://yukicoder.me/problems/no/238
-  https://yukicoder.me/problems/no/233
+  https://yukicoder.me/problems/no/75 期待値dp
+  https://yukicoder.me/problems/no/241 貪欲
+  https://yukicoder.me/problems/no/238 文字列操作
+  https://yukicoder.me/problems/no/233 文字列操作
   https://atcoder.jp/contests/abc149/tasks/abc149_e 二分探索
   https://atcoder.jp/contests/abc155/tasks/abc155_d 二分探索
 
@@ -26,7 +26,7 @@
   https://atcoder.jp/contests/abc150/tasks/abc150_d 最小公倍数の計算
   https://yukicoder.me/problems/no/220 桁dp
   https://yukicoder.me/problems/no/225 レーベンシュタイン距離(忘れやすいため)
-  https://yukicoder.me/problems/no/165　
+  https://yukicoder.me/problems/no/165 座圧、累積
   https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_2_A 幾何
 
 木曜日
