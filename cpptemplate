@@ -1208,11 +1208,14 @@ public:
 	static double getDistanceSP(Segment s, Point p);
 	
 	static double getDistance(Segment s1, Segment s2);
+
+	static Point getIntersection(Segment s1, Segment s2);
 };
 
 class Segment {
 public:
 	Point p1, p2;
+		Segment() {}
 	Segment(Point p1, Point p2) :p1(p1), p2(p2) {}
 };
 
@@ -1245,4 +1248,20 @@ double Point::getDistance(Segment s1, Segment s2) {
 	if (intersect(s1, s2)) return 0.0;
 	return min({ getDistanceSP(s1,s2.p1),getDistanceSP(s1,s2.p2)
 		,getDistanceSP(s2,s1.p1),getDistanceSP(s2,s1.p2) });
+}
+
+Point Point::getIntersection(Segment s1, Segment s2) {
+	// (s1.p1 - s2.p1).norm()
+	auto bs = s1.p2 - s1.p1;
+	auto n1 = s2.p1 - s1.p1;
+	auto n2 = s2.p2 - s1.p1;
+	auto c1 = std::abs(cross(n1, bs)) / bs.norm();
+	auto c2 = std::abs(cross(n2, bs)) / bs.norm();
+	return s2.p1 + (s2.p2 - s2.p1) *  (c1 / (c1 + c2));
+	// c1:c2=t:1-t
+	// c2t=(1-t)c1
+	// t/(1-t)=c1/(c1+c2)
+	// 
+
+
 }
