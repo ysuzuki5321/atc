@@ -782,7 +782,7 @@ vector<pll> getp3(ll n) {
 	for (ll i = 3; i * i <= n; i += 2)
 	{
 		if (n % i == 0) {
-			res.push_back(make_pair(n, 0));
+			res.push_back(make_pair(i, 0));
 			while (n % i == 0) { n /= i; res[cnt].second++; }
 			cnt++;
 		}

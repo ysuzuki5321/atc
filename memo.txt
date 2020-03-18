@@ -2114,7 +2114,30 @@ D - Five, Five Everywhere
       5<=n<=55
         ai%5=1もしくはai%5=2で作れば良い
           
-
+D - Semi Common Multiple
+  https://atcoder.jp/contests/abc150/tasks/abc150_d
+  Aの半公倍数
+    X=ak*(p+0.5)
+    pは全て整数である必要がある
+      Xも整数である
+        0.5を掛けるということはak/2という事
+          akは偶数
+            a0=2
+            a1=4の時
+            2*(1+0.5)=2+1=3
+            4*(1+0.5)=2
+            2i*(p+0.5)=4j*(q+0.5)
+            2ip+1=4jq+2
+            2ip-4jq=1
+            2ip=1+4jq
+            p=(1+4jq)/2i
+            となる事でpが整数ではなくなる
+            両方とも同じ場合
+            2ip+1=2jq+1
+            2ip=2jq
+              ip=jqは同じなので素因数も同じ
+                p=2jq/2i=jq/i
+                pは整数となる
 
 
                 
