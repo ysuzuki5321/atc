@@ -30,20 +30,26 @@
   https://yukicoder.me/problems/no/225 レーベンシュタイン距離(忘れやすいため)
   https://yukicoder.me/problems/no/165 座圧、累積
   https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_2_A 幾何
+  https://onlinejudge.u-aizu.ac.jp/problems/CGL_7_D
 
 木曜日
   https://atcoder.jp/contests/arc036/tasks/arc036_c 難易度の高いdp 
   https://atcoder.jp/contests/abc148/tasks/abc148_e 解けなかった素因数分解系の問題
   https://yukicoder.me/problems/no/17 ワーシャルフロイド
   https://yukicoder.me/problems/no/242 期待値の問題
+    https://mathtrain.jp/expectation ここも読む
   https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_1_B 幾何
+  https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_E
   
+
 金曜日
   https://atcoder.jp/contests/sumitrust2019/tasks/sumitb2019_e 数え上げ
   https://atcoder.jp/contests/abc154/tasks/abc154_f 数え上げ
   https://atcoder.jp/contests/agc037/tasks/agc037_c 貪欲？
   https://atcoder.jp/contests/jsc2019-qual/tasks/jsc2019_qual_c 数え上げ
   https://atcoder.jp/contests/abc152/tasks/abc152_f 数え上げ
+  https://atcoder.jp/contests/abc117/tasks/abc117_d bitdp
+  https://atcoder.jp/contests/abc098/tasks/arc098_b 
   
 土曜日
   https://atcoder.jp/contests/agc026/tasks/agc026_c 半分全列挙
