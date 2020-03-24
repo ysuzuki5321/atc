@@ -6,6 +6,7 @@ monday
 tuesday
     https://swagger.io/specification/ 
         OpenAPI Specification
+            can then be used 使用出来る
         Introduction
         Definitions
     https://ejje.weblio.jp/content/refer
