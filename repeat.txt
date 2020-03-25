@@ -34,6 +34,7 @@
   https://yukicoder.me/problems/no/165 座圧、累積
   https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_2_A 幾何
   https://onlinejudge.u-aizu.ac.jp/problems/CGL_7_D
+  
 
 木曜日
   https://atcoder.jp/contests/arc036/tasks/arc036_c 難易度の高いdp 
