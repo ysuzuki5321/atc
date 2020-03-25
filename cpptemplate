@@ -1263,6 +1263,16 @@ public:
 
 		return l;
 	}
+
+	static double getArea(vector<Point> g) {
+		double res = 0;
+		rep(i, n) {
+			int ne = (i + 1) % n;
+			res += cross(g[i], g[ne]);
+		}
+		return res / 2.0;
+	}
+
 };
 
 class Segment {
