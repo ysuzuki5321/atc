@@ -24,7 +24,8 @@
   https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_2_B 
   https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_2_C
   https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_3_A
-
+  http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A
+  
 水曜日
   https://atcoder.jp/contests/arc034/tasks/arc034_3 素因数分解と約数の合計のプラクティス
   https://atcoder.jp/contests/abc150/tasks/abc150_d 最小公倍数の計算

@@ -1133,6 +1133,7 @@ public:
 
 };
 class Segment;
+class Circle;
 class Point {
 public:
 	double x, y;
@@ -1210,6 +1211,58 @@ public:
 	static double getDistance(Segment s1, Segment s2);
 
 	static Point getIntersection(Segment s1, Segment s2);
+
+	static pair<Point, Point> crossPoints(Circle c, Segment s);
+
+	static int contains(vector<Point> g, Point p) {
+		int n = g.size();
+		bool x = false;
+		rep(i, n) {
+			Point a = g[i] - p, b = g[(i + 1) % n] - p;
+			// 線の上に載っているか
+			if (std::abs(cross(a, b)) < EPS && dot(a, b) < EPS) return 1;
+
+			// pを基準として上下にあるか
+			// または外積が正か?(→にあるか)
+			if (a.y > b.y) swap(a, b);
+			if (a.y < EPS && EPS < b.y && cross(a, b) > EPS) x = !x;
+		}
+		return x ? 2 : 0;
+	}
+
+	static vector<Point> andrewScan(vector<Point> s) {
+		vector<Point> u, l;
+		if (s.size() < 3) return s;
+		sort(all(s));
+		u.push_back(s[0]);
+		u.push_back(s[1]);
+		l.push_back(s[s.size() - 1]);
+		l.push_back(s[s.size() - 2]);
+
+		for (int i = 2; i < s.size(); i++) {
+
+			for (int _n = u.size(); _n >= 2 && ccw(u[_n - 2], u[_n - 1], s[i]) != CLOCKWISE; _n--) {
+				u.pop_back();
+			}
+			u.push_back(s[i]);
+		}
+
+		for (int i = s.size() - 3; i >= 0; i--) {
+
+			for (int _n = l.size(); _n >= 2 && ccw(l[_n - 2], l[_n - 1], s[i]) != CLOCKWISE; _n--) {
+				l.pop_back();
+			}
+			l.push_back(s[i]);
+		}
+
+		reverse(all(l));
+		for (int i = u.size() - 2; i >= 1; i--)
+		{
+			l.push_back(u[i]);
+		}
+
+		return l;
+	}
 };
 
 class Segment {
@@ -1263,5 +1316,30 @@ Point Point::getIntersection(Segment s1, Segment s2) {
 	// t/(1-t)=c1/(c1+c2)
 	// 
 
+
+}
+
+double arg(Point p) { return atan2(p.y, p.x); }
+Point polar(double a, double r) { return Point(cos(r) * a, sin(r) * a); }
+class Circle {
+public:
+	Point c;
+	double r;
+	Circle(Point c=Point(),double r = 0.0) : c(c),r(r){}
+	static pair<Point, Point> getCrossPoints(Circle c1, Circle c2) {
+		double d = (c1.c - c2.c).abs(); // 中心点どうしの距離
+		double a = acos((c1.r * c1.r + d * d - c2.r * c2.r) / (2 * c1.r * d));
+		double t = arg(c2.c - c1.c);
+		return make_pair(c1.c + polar(c1.r, t + a), c1.c + polar(c1.r, t - a));
+
+	}
+};
+
+pair<Point, Point> Point::crossPoints(Circle c, Segment s) {
+	auto pp = project(s, c.c);
+	auto f = (pp - c.c).norm();
+	auto mu = sqrt(c.r * c.r - f );
+	auto e = s.p1tp2() / s.p1tp2().abs();
+	return make_pair(pp + e * mu, pp - e * mu);
 
 }
