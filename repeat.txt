@@ -52,8 +52,8 @@
   https://atcoder.jp/contests/agc037/tasks/agc037_c 貪欲？
   https://atcoder.jp/contests/jsc2019-qual/tasks/jsc2019_qual_c 数え上げ
   https://atcoder.jp/contests/abc152/tasks/abc152_f 数え上げ
-  https://atcoder.jp/contests/abc117/tasks/abc117_d bitdp
-  https://atcoder.jp/contests/abc098/tasks/arc098_b 
+  https://atcoder.jp/contests/abc117/tasks/abc117_d 桁dp
+  https://atcoder.jp/contests/abc098/tasks/arc098_b xor
   
 土曜日
   https://atcoder.jp/contests/agc026/tasks/agc026_c 半分全列挙
