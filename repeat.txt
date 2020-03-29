@@ -62,6 +62,7 @@
   https://atcoder.jp/contests/dp/tasks/dp_i 確率dp
   https://atcoder.jp/contests/agc026/tasks/agc026_b 整数問題
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_D&lang=jp 
+  https://atcoder.jp/contests/abc116/tasks/abc116_d
   数学問題集
   https://atcoder.jp/contests/abc144/tasks/abc144_d
   https://atcoder.jp/contests/abc112/tasks/abc112_c
