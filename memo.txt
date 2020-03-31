@@ -2339,3 +2339,29 @@ D - Various Sushi
           つまり別queueに入れる
             
 
+D - 動的計画法
+  https://atcoder.jp/contests/abc024/tasks/abc024_d
+  ある(x,y),(x+1,y),(x,y+1)に書かれている数字が与えられる
+    x,yは何か？
+      35
+      15 21
+    となっている時
+      COM(x,y)=SUM(i=0tox,(i,y-1))である
+        35-15,21-15を使用すると
+          20 35
+             15 21
+                 6
+        が出る
+          COM(x,y)を考え、最大値を考えると実はそこまでパターン数が多くない気がしてきた
+            0<=x,y<99,999,999だからそうでもなさそう
+          20 35
+           t 15 21
+                 6
+          b < 6
+          COM(x,y)=SUM(i t x,COM(i,y-1))
+          COM(x+1,y)=SUM(i t x+1,COM(i,y-1))
+          COM(x,y+1)=SUM(i t x,COM(i,y))
+          COM(x+1,y)=SUM(i t x,COM(i,y-1)) + COM(x+1,y-1)
+            
+
+          

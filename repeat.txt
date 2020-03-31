@@ -27,6 +27,7 @@
   https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_2_C
   https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_3_A
   http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A
+  https://atcoder.jp/contests/abc024/tasks/abc024_d
   
 水曜日
   https://atcoder.jp/contests/arc034/tasks/arc034_3 素因数分解と約数の合計のプラクティス
