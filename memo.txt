@@ -2362,6 +2362,24 @@ D - 動的計画法
           COM(x+1,y)=SUM(i t x+1,COM(i,y-1))
           COM(x,y+1)=SUM(i t x,COM(i,y))
           COM(x+1,y)=SUM(i t x,COM(i,y-1)) + COM(x+1,y-1)
-            
+    COM(x,y)=x!/y!(x-y)!を利用する
+    A=(x+y)!/y!x!
+    B=(x+y+1)!/y!(x+1)!
+    C=(x+y+1)!/(y+1)!x!
+    B=A*(x+y+1)/(x+1)
+    C=A*(x+y+1)/(y+1)
+    B/A=(x+y+1)/(x+1)
+    C/A=(x+y+1)/(y+1)
+    A/B=(x+1)/(x+y+1)
+    A/C=(y+1)/(x+y+1)
+    A/B+A/C=(x+y+1+1)/(x+y+1)
+    A/B+A/C=(x+y+1)/(x+y+1)+1/(x+y+1)
+    A/B+A/C=1+1/(x+y+1)
+    A/B+A/C-1=1/(x+y+1)
+    (x+y+1)=(A/B+A/C-1)^-1
+    B/A=(x+y+1)/(x+1)
+    (x+1)=(x+y+1)*A/B
+    C/A=(x+y+1)/(y+1)
+    (y+1)=(x+y+1)*A/C
 
           
