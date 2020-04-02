@@ -47,6 +47,8 @@
     https://mathtrain.jp/expectation ここも読む
   https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_1_B 幾何
   https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_E
+  https://atcoder.jp/contests/abc076/tasks/abc076_d
+  
 
 金曜日
   https://atcoder.jp/contests/sumitrust2019/tasks/sumitb2019_e 数え上げ
