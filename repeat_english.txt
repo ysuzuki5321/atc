@@ -22,7 +22,9 @@ thursday
 
 friday
     https://ejje.weblio.jp/content/shall
-    shall
+        shall
+    https://ejje.weblio.jp/content/address+
+        address 動詞部分
 
 saturday
 
