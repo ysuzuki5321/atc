@@ -21,7 +21,8 @@ thursday
     should be あるべき
 
 friday
-
+    https://ejje.weblio.jp/content/shall
+    shall
 
 saturday
 
