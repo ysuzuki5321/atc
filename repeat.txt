@@ -59,7 +59,7 @@
   https://atcoder.jp/contests/abc117/tasks/abc117_d 桁dp
   https://atcoder.jp/contests/abc098/tasks/arc098_b xor
   https://atcoder.jp/contests/abc095/tasks/arc096_b
-  https://atcoder.jp/contests/abc076/tasks/abc076_d
+  https://atcoder.jp/contests/abc034/tasks/abc034_d
 
 土曜日
   https://atcoder.jp/contests/agc026/tasks/agc026_c 半分全列挙
