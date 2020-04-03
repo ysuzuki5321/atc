@@ -1,9 +1,6 @@
 たまにやり直したい問題集
-  https://atcoder.jp/contests/arc034/tasks/arc034_3 素因数分解と約数の合計のプラクティス
-  https://atcoder.jp/contests/m-solutions2019/tasks/m_solutions2019_c 確率と期待値のプラクティス
   https://atcoder.jp/contests/arc076/tasks/arc076_c 範囲を考える
   https://yukicoder.me/problems/no/727 数え上げ
-  https://atcoder.jp/contests/abc150/tasks/abc150_d 最小公倍数の計算
 
 週間課題(ノータイムで実装までたどり着けるようになったら入れ替える)
 月曜日
@@ -60,6 +57,8 @@
   https://atcoder.jp/contests/abc098/tasks/arc098_b xor
   https://atcoder.jp/contests/abc095/tasks/arc096_b
   https://atcoder.jp/contests/abc034/tasks/abc034_d
+  https://atcoder.jp/contests/abc158/tasks/abc158_e
+  https://yukicoder.me/problems/no/727
 
 土曜日
   https://atcoder.jp/contests/agc026/tasks/agc026_c 半分全列挙
